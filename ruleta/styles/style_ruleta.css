@@ -1,0 +1,100 @@
+.btn-group-justified {
+  margin: 0 auto;
+}
+
+
+
+
+.slotMachine .slot {
+  height: 100px;
+  background-position-x: 55%;
+  background-repeat: no-repeat;
+}
+
+
+.slot1 {
+  background-image: url("../img/slot1.png");
+}
+
+.slot2 {
+  background-image: url("../img/slot2.png");
+}
+
+.slot3 {
+  background-image: url("../img/slot3.png");
+}
+
+.slot4 {
+  background-image: url("../img/slot4.png");
+}
+
+.slot5 {
+  background-image: url("../img/slot5.png");
+}
+
+.slot6 {
+  background-image: url("../img/slot6.png");
+}
+
+
+/*
+* Casino
+*/
+#casino {
+  /*   border-top: 20px dashed #df040b;
+  border-bottom: 10px solid #df040b; */
+  background-color: white;
+
+
+  /* IMPORTANTE */
+  text-align: center;
+
+  margin: 427px; 
+  top: -350px; 
+
+  position: absolute;
+
+
+
+}
+
+#casino .content:nth-child(1) {
+  text-align: center;
+  background: url('../img/depruebasMachine.png') no-repeat 50% 80px;
+  background-position-x: calc(50% + 10px);
+  background-position-y: calc(-15% + 10px);
+  min-height: 580px;
+}
+
+#casino .content>div {
+  padding-top: 171px;
+  width: 310px;
+  margin: 0 auto;
+  transform: translateX(30px);
+}
+
+
+.slotMachine {
+  width: 29%;
+  border: 3px solid rgb(228, 18, 18);
+  ;
+  height: 90px;
+  display: inline-block;
+}
+
+/*  36.333333%;
+*/
+#casino .btn-group {
+  margin-top: 150px;
+  transform: translateX(-25px);
+}
+
+#casino .btn-group .btn {
+  border: none;
+  background-color: #ff8000;
+}
+
+#casino .btn-group .btn:hover,
+.btn-group .btn:focus {
+  background-color: rgb(228, 18, 18);
+}
