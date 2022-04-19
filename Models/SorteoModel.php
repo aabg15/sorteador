@@ -63,6 +63,11 @@ class SorteoModel extends Mysql{
     public function eliminarSorteo(int $id)
     {
         //$this->estado = $estado;
+        $query = "DELETE FROM jugador WHERE idsorteo =".$id;
+        $data = array($this->id);
+        $this->delete($query, $data);
+
+
         $this->id = $id;
         $query = "DELETE FROM sorteo WHERE id =".$id;
         $data = array($this->id);

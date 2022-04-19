@@ -1,8 +1,8 @@
 <?php
 
 $dni = $_REQUEST['dni'];
-//echo $dni;
-//$dni = 45832364;
+$id_sorteo = $_REQUEST['id'];
+
 
 //exit();
 $objeto = new Conexion3();
@@ -13,11 +13,10 @@ $resultado->execute();
 $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 foreach ($data as $datx) {
   $nombre = $datx['nombre'];
-  $apellidos = $datx['apellidos'];
-  $id_sorteo = $datx['idsorteo'];
+  $tienda = $datx['sucursal'];
 }
 
-$ganador = $nombre . ' ' . $apellidos;
+
 
 
 
@@ -71,7 +70,7 @@ foreach ($data as $datx) {
 
 <body class="sb-nav-fixed">
 
-  <audio src="<?php echo base_url(); ?>Assets/sound/aplausos-trompeta.mp3" autoplay loop></audio>
+ <!--  <audio src="<?php echo base_url(); ?>Assets/sound/aplausos-trompeta.mp3" autoplay loop></audio> -->
 
 
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
@@ -170,7 +169,7 @@ foreach ($data as $datx) {
 
                 <center>
 
-                  <p id="nombreganador"><?php echo $ganador; ?></p>
+                  <p id="nombreganador"><?php echo $nombre; ?> de la Tienda <?php echo $tienda; ?></p>
 
                 </center>
 

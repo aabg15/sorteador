@@ -30,7 +30,6 @@ class JuegoModel extends Mysql
     public function listarJugadoresModificado($idsorteo, $dni, $cant_ganadores)
     {
 
-
         $consulta = "SELECT count(id) as 'cantidad' FROM ganadores where sorteo=" . $idsorteo;
         $dataCant = $this->select($consulta);
 
@@ -43,9 +42,7 @@ class JuegoModel extends Mysql
             $pedazo .= $dni . ',';
         }
         $pedazo = substr($pedazo, 0, -1);
-
         $sqlCon = "SELECT * FROM jugador WHERE idsorteo =".$idsorteo." AND dni NOT IN (" . $pedazo . ")";
-
         //echo 'cantidad de ganadores -> :';
         $cantidad = $dataCant[0];
 
@@ -61,15 +58,13 @@ class JuegoModel extends Mysql
                 $oportunidades = $datpS['oportunidades'];
                 $dni = $datpS['dni'];
                 $nombre = $datpS['nombre'];
-                $apellidos = $datpS['apellidos'];
-                $jugador = $nombre . ' ' . $apellidos;
                 if ($oportunidades == 1) {
                     //$listafinal[] = $jugador;
 
-                    array_push($datos, array($dni, $jugador));
+                    array_push($datos, array($dni, $nombre));
                 } else {
                     while ($oportunidades > 0) {
-                        array_push($datos, array($dni, $jugador));
+                        array_push($datos, array($dni, $nombre));
                         $oportunidades = $oportunidades - 1;
                     }
                 }
@@ -122,8 +117,7 @@ class JuegoModel extends Mysql
                 $oportunidades = $datpS['oportunidades'];
                 $dni = $datpS['dni'];
                 $nombre = $datpS['nombre'];
-                $apellidos = $datpS['apellidos'];
-                $jugador = $nombre . ' ' . $apellidos;
+
                 if ($oportunidades == 1) {
                     /* $datos = array(
                         [$numero] => array(
@@ -132,17 +126,17 @@ class JuegoModel extends Mysql
 
                     );
                     $numero = $numero + 1; */
-                    array_push($datos, array($dni, $jugador));
+                    array_push($datos, array($dni, $nombre));
                 } else {
                     while ($oportunidades > 0) {
                         /* $datos = array(
                             [$numero] => array(
-                                $dni => $jugador,
+                                $dni => $nombre,
                             )
 
                         );
                         $numero = $numero + 1; */
-                        array_push($datos, array($dni, $jugador));
+                        array_push($datos, array($dni, $nombre));
                         $oportunidades = $oportunidades - 1;
                     }
                 }
@@ -167,7 +161,7 @@ class JuegoModel extends Mysql
     public function listaGanadoresfinales($idsorteo)
     {
 
-        $consulta = "SELECT ju.nombre,ju.apellidos,g.dni,g.premio,ju.sucursal from ganadores g INNER JOIN jugador ju on(ju.dni=g.dni) where sorteo=" . $idsorteo;
+        $consulta = "SELECT ju.nombre,g.dni,g.premio,ju.sucursal from ganadores g INNER JOIN jugador ju on(ju.dni=g.dni and ju.idsorteo=g.sorteo) where sorteo=" . $idsorteo;
         //$sql = "SELECT * FROM ganadores WHERE sorteo =".$idsorteo;
 
         $res = $this->select_all($consulta);

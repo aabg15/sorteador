@@ -11,6 +11,18 @@ class ExcelModel extends Mysql{
         $res = $this->select_all($sql);
         return $res;
     }
+
+    public function limpiarTabla($id){
+
+
+
+        $this->id = $id;
+        $query = "DELETE FROM jugador WHERE idsorteo =".$id;
+        $data = array($this->id);
+        $this->delete($query, $data);
+        return true;
+        
+    }
     
     public function insertarJugador($array,int $idsorteo)
     {
@@ -26,16 +38,14 @@ class ExcelModel extends Mysql{
         $array_num = count($array);
         //var_dump($array);
 
-        for ($i = 0; $i < $array_num; $i=$i+5){
+        for ($i = 0; $i < $array_num; $i=$i+4){
             $this->nombre= $array[$i];
-            $this->apellidos= $array[$i+1];
-            $this->dni= $array[$i+2];
-            $this->oportunidades= $array[$i+3];
-            $this->sucursal= $array[$i+4];
+            $this->dni= $array[$i+1];
+            $this->oportunidades= $array[$i+2];
+            $this->sucursal= $array[$i+3];
 
-
-            $query = "INSERT INTO jugador(nombre, apellidos, dni,oportunidades,sucursal,idsorteo) VALUES (?,?,?,?,?,?)";
-            $data = array($this->nombre, $this->apellidos, $this->dni, $this->oportunidades,$this->sucursal,$this->idsorteo);
+            $query = "INSERT INTO jugador(nombre,dni,oportunidades,sucursal,idsorteo) VALUES (?,?,?,?,?)";
+            $data = array($this->nombre, $this->dni, $this->oportunidades,$this->sucursal,$this->idsorteo);
             $resul = $this->insert($query, $data);
         }
 

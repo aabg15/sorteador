@@ -7,7 +7,7 @@ $conexion = $objeto->Conectar();
 //recepción de datos enviados mediante POST desde ajax
 $sorteos_disp = $_POST['sorteos_disp'];
 
-$consulta = "SELECT ju.nombre,ju.apellidos,g.dni,g.premio,ju.sucursal from ganadores g INNER JOIN jugador ju on(ju.dni=g.dni) where sorteo=" . $sorteos_disp;
+$consulta = "SELECT ju.nombre,g.dni,g.premio,ju.sucursal from ganadores g INNER JOIN jugador ju on(ju.dni=g.dni and ju.idsorteo=g.sorteo) where sorteo=" . $sorteos_disp;
 
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
@@ -26,7 +26,7 @@ if ($cantt > 0) {
             'dni' => $datp['dni'],
             'premio' => $datp['premio'],
             'sucursal' => $datp['sucursal'],
-            'nombre' => $datp['nombre'] . ' ' . $datp['apellidos'],
+            'nombre' => $datp['nombre'],
 
         );
     }

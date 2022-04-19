@@ -30,7 +30,7 @@
 
 <body class="sb-nav-fixed">
 
-  <audio src="<?php echo base_url(); ?>Assets/sound/champions.mp3" autoplay loop></audio>
+  <!-- <audio src="<?php echo base_url(); ?>Assets/sound/champions.mp3" autoplay loop></audio> -->
 
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
     <!-- <a class="navbar-brand" href="<?php echo base_url(); ?>excel/listar">Sorteador</a> -->
@@ -126,48 +126,53 @@
 
               <div id="ganador">
 
-                <center>
 
-                  <?php
 
-                  $contador = 0;
-                  foreach ($data as $key) {
-                    $contador = $contador + 1;
-                  ?>
+                <?php
+//class="text-center" style="text-align: justify;"
+                $contador = 0;
+                //var_dump($data);
+                foreach ($data as $key) {
+                  $contador = $contador + 1;
+                ?>
 
-                    <p id="nombreganador"><?php echo $contador; ?>- <?php echo $key['nombre'] . ' ' . $key['apellidos'] ?> </p>
-                  <?php
-                  }
+                  <div align="justify">
+                    <p id="nombreganador" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $contador; ?>- <?php echo $key['nombre'] . ' de la Tienda ' . $key['sucursal'] ?> </p>
 
-                  ?>
+                  </div>
 
-                </center>
-              
+                <?php
+                }
+
+                ?>
+
+
+
+              </div>
             </div>
           </div>
-        </div>
-        <script src="<?php echo base_url(); ?>confetti/confetti.js"></script>
-        <!-- Confetti  JS-->
-        <script>
-          // start
+          <script src="<?php echo base_url(); ?>confetti/confetti.js"></script>
+          <!-- Confetti  JS-->
+          <script>
+            // start
 
-          const start = () => {
-            setTimeout(function() {
-              confetti.start()
-            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
-          };
+            const start = () => {
+              setTimeout(function() {
+                confetti.start()
+              }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+            };
 
-          //  Stop
+            //  Stop
 
-          const stop = () => {
-            setTimeout(function() {
-              confetti.stop()
-            }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
-          };
+            const stop = () => {
+              setTimeout(function() {
+                confetti.stop()
+              }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+            };
 
-          start();
-          //stop();
-        </script>
+            start();
+            //stop();
+          </script>
       </main>
 
 

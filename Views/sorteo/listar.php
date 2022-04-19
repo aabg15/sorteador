@@ -15,7 +15,7 @@
             <table class="table table-light mt-4" id="table">
               <thead class="thead-dark">
                 <tr>
-                  <th>Id</th>
+                  <!-- <th>Id</th> -->
                   <th>Nombre</th>
                   <th>Fecha</th>
                   <th>Premio</th>
@@ -36,7 +36,7 @@
                   // exit();
                 ?>
                   <tr>
-                    <td><?php echo $autor['id']; ?></td>
+                    <!-- <td><?php echo $autor['id']; ?></td> -->
                     <td><?php echo $autor['nombre']; ?></td>
                     <td><?php echo $autor['fecha']; ?></td>
                     <td><?php echo $autor['premio']; ?></td>
@@ -46,6 +46,7 @@
 
                     <td>
                       <a class="btn btn-primary" href="<?php echo base_url() ?>sorteo/editar?id=<?php echo $autor['id'] ?>"><i class="fas fa-edit"></i></a>
+                      <a class="btn btn-success" href="<?php echo base_url() ?>excel/limpiar?id=<?php echo $autor['id'] ?>"><i class="fas fa-database"></i></a>
 
                       <form method="post" action="<?php echo base_url() ?>sorteo/eliminar" class="d-inline eliminar">
                         <input type="hidden" name="id" value="<?php echo $autor['id']; ?>">

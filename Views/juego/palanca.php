@@ -163,7 +163,7 @@ if ($data == 'seacabo') {
 
 
   #tituloJuego {
-    color: #df040b;
+    color: #D433FF;
     font-size: 70px;
   }
 
@@ -336,7 +336,7 @@ if ($data == 'seacabo') {
                 </div> -->
 
 
-                <form action="">
+                <form action="" method="POST">
 
                   <div id="divbotonjugar">
                     <button type="submit" id="casinoShuffle" style="position: absolute;top: 98%; margin: 33%;border-radius:5px 10px 15px 20px; border-color: white;background-color: transparent;"><img src="<?php echo base_url() . "Assets/img/jugarbtn.png" ?>" height="120" width="120" /></button>
@@ -451,7 +451,8 @@ if ($data == 'seacabo') {
                 title: 'FELICIDADES!!!!'
               }).then(function() {
                 //eliminarLS();
-                location.href = "<?php echo base_url(); ?>juego/ganador?dni=" + dni;
+
+                location.href = "<?php echo base_url(); ?>juego/ganador?dni=" + dni+"&id="+id_sorteo;
               });
             }
           </script>

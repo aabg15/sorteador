@@ -73,6 +73,9 @@ class Sorteo extends Controllers
             $this->views->getView($this, "editar", $data);
         }
     }
+
+
+
     public function modificar()
     {
         $id = $_POST['id'];
@@ -120,6 +123,7 @@ class Sorteo extends Controllers
         header("location: " . base_url() . "sorteo/listar");
         die();
     }
+    
     public function reingresar()
     {
         $id = $_POST['id'];

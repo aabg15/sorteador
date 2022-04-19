@@ -7,7 +7,7 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid">
-      <h5 class="text-center">Imagenes del Login</h5>
+      <h5 class="text-center">Imágenes del Login</h5>
       <div class="row">
         <div class="col-lg-12">
 

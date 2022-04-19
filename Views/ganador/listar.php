@@ -68,7 +68,6 @@
                   <!-- <tr>
                     <td><?php echo $autor['id']; ?></td>
                     <td><?php echo $autor['nombre']; ?></td>
-                    <td><?php echo $autor['apellidos']; ?></td>
                     <td><?php echo $autor['dni']; ?></td>
                     <td><?php echo $autor['dni']; ?></td>
                     <td><?php echo $autor['sucursal']; ?></td>
