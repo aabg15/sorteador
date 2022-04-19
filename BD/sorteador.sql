@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-04-2022 a las 15:13:53
+-- Tiempo de generación: 19-04-2022 a las 08:15:36
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -56,16 +56,6 @@ CREATE TABLE `ganadores` (
   `premio` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `ganadores`
---
-
-INSERT INTO `ganadores` (`id`, `dni`, `sorteo`, `premio`) VALUES
-(1, 25832364, 1, 'Carro0km'),
-(2, 48832364, 2, 'CARRO'),
-(3, 42836364, 2, 'CARRO'),
-(4, 70032364, 1, 'Carro0km');
-
 -- --------------------------------------------------------
 
 --
@@ -75,7 +65,6 @@ INSERT INTO `ganadores` (`id`, `dni`, `sorteo`, `premio`) VALUES
 CREATE TABLE `jugador` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
-  `apellidos` varchar(50) DEFAULT NULL,
   `dni` varchar(50) DEFAULT NULL,
   `oportunidades` int(11) DEFAULT NULL,
   `sucursal` varchar(50) DEFAULT NULL,
@@ -86,23 +75,15 @@ CREATE TABLE `jugador` (
 -- Volcado de datos para la tabla `jugador`
 --
 
-INSERT INTO `jugador` (`id`, `nombre`, `apellidos`, `dni`, `oportunidades`, `sucursal`, `idsorteo`) VALUES
-(1, 'Aldair', 'Xavi', '75822364', 1, 'Sullana\r\n', 1),
-(2, 'JESUS', 'Lopez', '45832364', 2, 'Sullana\r\n', 1),
-(3, 'BENJAMON', 'BALCERDO', '81322364', 3, 'Sullana\r\n', 1),
-(4, 'LUIGUI', 'Picasso', '78302364', 1, 'Sullana\r\n', 1),
-(6, 'BENJAMIN', 'P', '14832365', 5, 'Sullana\r\n', 1),
-(7, 'Angel', 'd', '75632364', 1, 'Sullana\r\n', 1),
-(9, 'Angel2', 'X', '75811364', 3, 'Sullana\r\n', 1),
-(10, 'Angel3', 'bonilla', '70032364', 1, 'Sullana\r\n', 1),
-(11, 'Angel4', 'F', '79932364', 1, 'Sullana\r\n', 1),
-(12, 'Angel55', 'bonilla', '12832364', 5, 'Sullana\r\n', 1),
-(13, 'Unillis', 'Efio', '25832364', 8, 'Sullana\r\n', 1),
-(14, 'edmundo', 'reyes', '35832364', 1, 'Sullana\r\n', 1),
-(15, 'BALDERA ', 'CARDOZO', '69832366', 1, 'Sullana\r\n', 1),
-(16, 'Abdul', 'gonzalez', '73832364', 1, 'Sullana\r\n', 1),
-(17, 'sufur', 'retamoso', '42836364', 1, 'Sullana\r\n', 2),
-(18, 'Nombre', 'Leiva', '48832364', 6, 'Sullana\r\n', 2);
+INSERT INTO `jugador` (`id`, `nombre`, `dni`, `oportunidades`, `sucursal`, `idsorteo`) VALUES
+(57, 'Angel bonilla gonzaelz', '75832364', 1, 'San jose\r\n', 1),
+(58, 'pepito dos palos', '59858671', 1, 'Sullana\r\n', 1),
+(59, 'Aldair xavineta', '75822364', 5, 'Chiclayo\r\n', 1),
+(60, 'JESUS LOPEZ', '45832364', 4, 'Pisco\r\n', 1),
+(61, 'LUIGUI picaso', '78302364', 1, 'Lambayeque\r\n', 1),
+(62, 'BALDERA CARDOZO', '69832366', 2, 'Barranca\r\n', 1),
+(63, 'edmundo reyes', '35832364', 3, 'Las lomas\r\n', 1),
+(64, 'Any bonilla chaname', '35226054', 4, 'Los pinos\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -126,8 +107,7 @@ CREATE TABLE `sorteo` (
 --
 
 INSERT INTO `sorteo` (`id`, `nombre`, `fecha`, `premio`, `reglas`, `cantidad_intento`, `imagen_premio`, `estado`) VALUES
-(1, 'Sorteo DE HOY', '2022-04-12', 'Carro0km', '<p><strong>1. Sorteo legal.</strong></p><p><strong>2. Valido para clientes antiguos.</strong></p><p>&nbsp;</p>', 2, 'carro.jpg', 'SR'),
-(2, '09APRIL', '2022-04-09', 'CARRO', '<p>1. <em>REGLA </em>1</p><p><strong>2. REGLA2</strong></p><p><strong>3. REGLA3</strong></p>', 2, 'carro.jpg', 'SR');
+(1, 'Sorteo DE HOY', '2022-04-19', 'Carro0km', '<p><strong>1. Sorteo legal.</strong></p><p><strong>2. Valido para clientes antiguos.</strong></p><p>&nbsp;</p>', 2, 'carro.jpg', 'SS');
 
 -- --------------------------------------------------------
 
@@ -200,19 +180,19 @@ ALTER TABLE `fondo`
 -- AUTO_INCREMENT de la tabla `ganadores`
 --
 ALTER TABLE `ganadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `sorteo`
 --
 ALTER TABLE `sorteo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
