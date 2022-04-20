@@ -56,6 +56,7 @@
 
                         <form method="post" action="<?php echo base_url() ?>fondos/eliminar" class="d-inline eliminar">
                           <input type="hidden" name="id" value="<?php echo $autor['id']; ?>">
+                          <input type="hidden" name="destino" value="<?php echo $autor['destino']; ?>">
                           <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
                         </form>
 

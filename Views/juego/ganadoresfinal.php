@@ -18,7 +18,7 @@
 
 <style>
   #tituloJuego {
-    color: #df040b;
+    color: #eeba1b;
     font-size: 100px;
   }
 
@@ -28,7 +28,7 @@
   }
 </style>
 
-<body class="sb-nav-fixed">
+<body>
 
   <!-- <audio src="<?php echo base_url(); ?>Assets/sound/champions.mp3" autoplay loop></audio> -->
 
@@ -50,153 +50,105 @@
       </li>
     </ul>
   </nav>
-  <div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
 
 
-      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-        <div class="sb-sidenav-menu">
-          <div class="nav">
-            <?php if ($_SESSION['rol'] == 1) { ?>
-              <!--  <a class="nav-link active" href="<?php echo base_url(); ?>admin/listar">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tasks fa-lg"></i></div>
-                                Prestamo
-                            </a> -->
-            <?php } ?>
+  <main>
+    <div class="container-fluid">
+      <br>
+      <div class="main-content">
+        <div class="row-5">
 
-            <a class="nav-link active" href="<?php echo base_url(); ?>excel/listar">
-              <div class="sb-nav-link-icon"><i class="fas fa-list fa-lg"></i>
-              </div>
-              Inicio
-            </a>
+          <h1 class="animate__animated animate__heartBeat text-center" id="tituloJuego">Ganadores Finales</h1>
 
-            <a class="nav-link collapsed active" href="<?php echo base_url(); ?>/sorteo" data-toggle="collapse" data-target="#collapseEst" aria-expanded="false" aria-controls="collapseLayouts">
-              <div class="sb-nav-link-icon"><i class="fas fa-book fa-lg"></i></div>
-              Mantenimiento
-              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down fa-lg"></i></div>
-            </a>
-            <div class="collapse" id="collapseEst" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link active" href="<?php echo base_url(); ?>sorteo">Registrar Sorteo</a>
-                <a class="nav-link active" href="<?php echo base_url(); ?>excel">Importar BD.csv</a>
-                <a class="nav-link active" href="<?php echo base_url(); ?>juego">Jugar</a>
-                <a class="nav-link active" href="<?php echo base_url(); ?>fondos">Fondo de login</a>
+          <div id="ganador">
+            <br><br>
 
-              </nav>
+
+
+            <div class="table-responsive-md">
+
+              <table class="table table-bordered" style="width: 100%;">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ganador</th>
+                    <th scope="col">Tienda</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+
+
+                  <?php
+                  $contador = 0;
+                  //var_dump($data);
+                  foreach ($data as $key) {
+                    $contador = $contador + 1;
+                  ?>
+                    <tr>
+                      <td id="nombreganador" style="text-align: center;" scope="row"><?php echo $contador; ?></td>
+                      <td id="nombreganador" style="text-align: center;"><?php echo $key['nombre']; ?></td>
+                      <td id="nombreganador" style="text-align: center;"><?php echo $key['sucursal']; ?></td>
+                    </tr>
+                  <?php
+                  }
+
+                  ?>
+
+                </tbody>
+              </table>
             </div>
-
-            <a class="nav-link collapsed active" href="<?php echo base_url(); ?>/sorteo" data-toggle="collapse" data-target="#collapseEst2" aria-expanded="false" aria-controls="collapseLayouts">
-
-              <div class="sb-nav-link-icon"><i class="fas fa-file-pdf fa-lg"></i></div>
-              Operaciones
-              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down fa-lg"></i></div>
-            </a>
-            <div class="collapse" id="collapseEst2" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link active" href="<?php echo base_url(); ?>ganador">Reporte Ganadores</a>
-                <a class="nav-link active" href="<?php echo base_url(); ?>sorteo/listar">Ver Sorteos</a>
-                <a class="nav-link active" href="<?php echo base_url(); ?>excel/listar">Ver Jugadores</a>
-                <a class="nav-link active" href="<?php echo base_url(); ?>fondos/listar">Ver Imagenes del Login</a>
-
-              </nav>
-            </div>
-
-            <?php if ($_SESSION['rol'] == 1) { ?>
-              <a class="nav-link active" href="<?php echo base_url(); ?>usuarios/listar">
-                <div class="sb-nav-link-icon"><i class="fas fa-user fa-lg"></i>
-                </div>
-                Usuarios
-              </a>
-
-            <?php } ?>
 
           </div>
         </div>
+      </div>
+      <br><br>
+      <center>
 
-      </nav>
-    </div>
-    <div id="layoutSidenav_content">
-      <main>
-        <div class="container-fluid">
-          <br>
-          <div class="main-content">
-            <div class="row-5">
+        <a class="btn btn-primary" href="<?php echo base_url() ?>ganador/listar"><i class="fas fa-file-alt"></i> Reportes de ganadores</a>
 
-              <h1 class="animate__animated animate__heartBeat text-center" id="tituloJuego">Ganadores Finales</h1>
-
-              <div id="ganador">
+      </center>
 
 
 
-                <?php
-//class="text-center" style="text-align: justify;"
-                $contador = 0;
-                //var_dump($data);
-                foreach ($data as $key) {
-                  $contador = $contador + 1;
-                ?>
 
-                  <div align="justify">
-                    <p id="nombreganador" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $contador; ?>- <?php echo $key['nombre'] . ' de la Tienda ' . $key['sucursal'] ?> </p>
+      <script src="<?php echo base_url(); ?>confetti/confetti.js"></script>
+      <!-- Confetti  JS-->
+      <script>
+        // start
 
-                  </div>
+        const start = () => {
+          setTimeout(function() {
+            confetti.start()
+          }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        };
 
-                <?php
-                }
+        //  Stop
 
-                ?>
+        const stop = () => {
+          setTimeout(function() {
+            confetti.stop()
+          }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+        };
 
-
-
-              </div>
-            </div>
-          </div>
-          <script src="<?php echo base_url(); ?>confetti/confetti.js"></script>
-          <!-- Confetti  JS-->
-          <script>
-            // start
-
-            const start = () => {
-              setTimeout(function() {
-                confetti.start()
-              }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
-            };
-
-            //  Stop
-
-            const stop = () => {
-              setTimeout(function() {
-                confetti.stop()
-              }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
-            };
-
-            start();
-            //stop();
-          </script>
-      </main>
-
-
-      <footer class="py-4 bg-light mt-auto" style="text-align: center;">
-        <div class="container-fluid">
-          <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Ingytal</div>
-          </div>
-        </div>
-      </footer>
-    </div>
+        start();
+        //stop();
+      </script>
+  </main>
 
 
 
-    <!-- JavaScript files-->
-    <script src="<?php echo base_url(); ?>Assets/js/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/bootstrap.bundle.min.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/select2.min.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/scripts.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/Funciones.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/all.min.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/sweetalert2@9.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>Assets/js/dataTables.bootstrap4.min.js"></script>
+
+  <!-- JavaScript files-->
+  <script src="<?php echo base_url(); ?>Assets/js/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/select2.min.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/scripts.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/Funciones.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/all.min.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/sweetalert2@9.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url(); ?>Assets/js/dataTables.bootstrap4.min.js"></script>
 
 </body>
 

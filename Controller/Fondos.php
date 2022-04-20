@@ -61,7 +61,9 @@ class Fondos extends Controllers
     public function eliminar()
     {
         $id = $_POST['id'];
-        $this->model->eliminarFondo($id);
+        $destino = $_POST['destino'];
+
+        $this->model->eliminarFondo($id,$destino);
         header("location: " . base_url() . "fondos/listar");
         die();
     }

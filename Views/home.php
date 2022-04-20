@@ -33,6 +33,7 @@ $css = "background-color: #ff8000 !important;background-image: url('$ruta');";
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Login</title>
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>Assets/img/logo-icon.ico" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/css/styles.css" id="theme-stylesheet">
 
   <style>

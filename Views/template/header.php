@@ -64,7 +64,8 @@
                                 <a class="nav-link active" href="<?php echo base_url(); ?>sorteo">Registrar Sorteo</a>
                                 <a class="nav-link active" href="<?php echo base_url(); ?>excel">Importar BD.csv</a>
                                 <a class="nav-link active" href="<?php echo base_url(); ?>juego">Jugar</a>
-                                <a class="nav-link active" href="<?php echo base_url(); ?>fondos">Fondo de login</a>
+                                <a class="nav-link active" href="<?php echo base_url(); ?>fondos">Fondo de Login</a>
+                                <a class="nav-link active" href="<?php echo base_url(); ?>maquinas">Fondo de Sorteador</a>
                             </nav>
                         </div>
 
@@ -80,6 +81,7 @@
                                 <a class="nav-link active" href="<?php echo base_url(); ?>sorteo/listar">Ver Sorteos</a>
                                 <a class="nav-link active" href="<?php echo base_url(); ?>excel/listar">Ver Jugadores</a>
                                 <a class="nav-link active" href="<?php echo base_url(); ?>fondos/listar">Ver Imagenes del Login</a>
+                                <a class="nav-link active" href="<?php echo base_url(); ?>maquinas/listar">Ver Imagenes del Sorteador</a>
 
                             </nav>
                         </div>

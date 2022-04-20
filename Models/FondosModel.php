@@ -95,8 +95,9 @@ class FondosModel extends Mysql
         return true;
     }
 
-    public function eliminarFondo($id)
+    public function eliminarFondo($id,$destino)
     {
+        unlink($destino);
 
         $this->id = $id;
         $query = "DELETE FROM fondo WHERE id =".$id;
