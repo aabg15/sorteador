@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if ($_POST['id_sorteo'] != '') {
@@ -24,7 +25,7 @@ if ($data == 'seacabo') {
   shuffle($data);
   //print_r($data);
 
-  $lista1 = "<div id='casino1' class='slotMachine' style='margin-left: -561px; margin-top:-15px'>";
+  $lista1 = "<div id='casino1' class='slotMachine' style='margin-left: -449px; margin-top:-7px'>";
   foreach ($data as $value) {
 
     $dni = $data[$i][$y];
@@ -67,9 +68,8 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -82,22 +82,18 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/css/styles.css" id="theme-stylesheet">
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/css/select2.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>Assets/css/dataTables.bootstrap4.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
   <script src="<?php echo base_url(); ?>ruleta/dist/slotmachine.js"></script>
   <script src="<?php echo base_url(); ?>ruleta/dist/jquery.slotmachine.js"></script>
 
 
 </head>
 
-
-
 <style>
   @charset "utf-8";
 
   #casino {
-    margin: -120px;
+    margin: -21px;
   }
 
   #casino h1 {
@@ -106,8 +102,8 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
 
   #casino .content:nth-child(1) {
     text-align: center;
-    <?php echo $css; ?>background-position-x: calc(31% + 9px);
-    background-position-y: calc(-15% + 20px);
+    <?php echo $css; ?>background-position-x: calc(25% + 63px);
+    background-position-y: calc(-22% + 23px);
     min-height: 586px;
     height: 580px;
 
@@ -186,13 +182,15 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
   }
 
   #tituloJugadores {
-    font-size: 35px;
+    font-size: 33px;
   }
 </style>
 
+
+
 <body>
 
-  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary" style="background: #b1000c;">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary">
     <!-- <a class="navbar-brand" href="<?php echo base_url(); ?>excel/listar">Sorteador</a> -->
     <a class="navbar-brand" href="<?php echo base_url(); ?>excel/listar">
       <img src="<?php echo base_url(); ?>Assets/img/logo-oculto.png" width="200" id="img_nav">
@@ -211,6 +209,8 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
     </ul>
   </nav>
 
+
+
   <main>
     <input type="hidden" name="id_sorteo" id="id_sorteo" value="<?php echo $id_sorteo; ?>">
     <input type="hidden" name="premio" id="premio" value="<?php echo $premio; ?>">
@@ -223,14 +223,7 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
           <h1 class="animate__animated animate__heartBeat text-center" id="tituloJuego">SORTEADOR</h1>
         </center>
 
-        <div class="row justify-content-around align-items-center">
 
-          <!-- JUEGO -->
-          <div class="col-auto p-5" id="juego">
-
-
-          </div>
-        </div>
       </div>
 
       <!-- <div class="container"> -->
@@ -246,14 +239,7 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
 
             ?>
 
-            <br>
-
-
-
-            <div class="container">
-              <div class="celebracionConfeti"></div>
-            </div>
-
+        
           </div>
         </div>
 
@@ -393,19 +379,16 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
 
 
 
-
-
-  <!-- JavaScript files-->
-  <script src="<?php echo base_url(); ?>Assets/js/index.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/bootstrap.bundle.min.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/select2.min.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/scripts.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/Funciones.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/all.min.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/sweetalert2@9.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/jquery.dataTables.min.js"></script>
-  <script src="<?php echo base_url(); ?>Assets/js/dataTables.bootstrap4.min.js"></script>
+    <!-- JavaScript files-->
+    <script src="<?php echo base_url(); ?>Assets/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/select2.min.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/scripts.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/Funciones.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/all.min.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/sweetalert2@9.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>Assets/js/dataTables.bootstrap4.min.js"></script>
 
 </body>
 
