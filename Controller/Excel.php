@@ -38,6 +38,7 @@ class Excel extends Controllers
 
   public function insertar()
   {
+    header('Content-Type: text/html; charset=UTF-8');
     $arregloData = array();
 
     $idsorteo = $_POST['sorteos_disp'];
@@ -56,10 +57,10 @@ class Excel extends Controllers
         if ($i != 0) {
 
           $datos = explode(";", $linea);
-          $nombre = !empty($datos[0])  ? ($datos[0]) : '';
+          $nombre = utf8_encode(!empty($datos[0])  ? ($datos[0]) : '');
           $dni    = !empty($datos[1])  ? ($datos[1]) : '';
           $oportunidades          = !empty($datos[2])  ? ($datos[2]) : '';
-          $sucursal = !empty($datos[3])  ? ($datos[3]) : '';
+          $sucursal = utf8_encode(!empty($datos[3])  ? ($datos[3]) : '');
 
           if ($i == 1) {
             array_push($arregloData, $nombre, $dni, $oportunidades, $sucursal);

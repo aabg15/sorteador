@@ -25,7 +25,7 @@ if ($data == 'seacabo') {
   shuffle($data);
   //print_r($data);
 
-  $lista1 = "<div id='casino1' class='slotMachine' style='margin-left: -449px; margin-top:-7px'>";
+  $lista1 = "<div id='casino1' class='slotMachine' style='margin-left: -106px; margin-top:4px'>";
   foreach ($data as $value) {
 
     $dni = $data[$i][$y];
@@ -102,8 +102,8 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
 
   #casino .content:nth-child(1) {
     text-align: center;
-    <?php echo $css; ?>background-position-x: calc(25% + 63px);
-    background-position-y: calc(-22% + 23px);
+    <?php echo $css; ?>background-position-x: calc(42% + 63px);
+    background-position-y: calc(-16% + 23px);
     min-height: 586px;
     height: 580px;
 
@@ -174,8 +174,6 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
     background-color: rgb(180, 75, 119);
   }
 
-
-
   #tituloJuego {
     color: #eeba1b;
     font-size: 100px;
@@ -185,8 +183,6 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
     font-size: 33px;
   }
 </style>
-
-
 
 <body>
 
@@ -249,8 +245,8 @@ $css = "background: url('$ruta') no-repeat 50% 80px;";
 
 
       <div style="text-align: center;">
-        <button class="btn animate__animated animate__rotateIn" id="casinoShuffle" style="position: absolute;top:11%;margin:10%">
-          <img src="http://localhost/sorteador/Assets/img/jugarbtn.png" alt="" height="300" width="300">
+        <button class="btn animate__animated animate__rotateIn" id="casinoShuffle" style="position: absolute;top:16%;margin:19%">
+          <img src="http://localhost/sorteador/Assets/img/jugarbtn.png" alt="" height="150" width="150">
         </button>
       </div>
 
